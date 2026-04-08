@@ -625,6 +625,7 @@ body {
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.3s ease;
+  overflow: hidden;
 }
 
 .faq-item.open .faq-item-answer {
@@ -633,7 +634,7 @@ body {
 
 .faq-item-answer p {
   overflow: hidden;
-  padding-top: 16px;
+  margin-top: 16px;
   font-size: 18px;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.6);
@@ -1164,6 +1165,7 @@ body {
   .section-title {
     font-size: 32px;
     line-height: 40px;
+    text-align: center;
   }
 
   .who-row,
@@ -1232,8 +1234,20 @@ body {
     font-size: 15px;
   }
 
+  .faq-item {
+    padding: 16px;
+  }
+
+  .faq-item-answer p {
+    line-height: 20px;
+  }
+
   .cta-globe-img {
     width: 100%;
     height: 350px;
+  }
+
+  .footer-logo {
+    width: 100px;
   }
 }
