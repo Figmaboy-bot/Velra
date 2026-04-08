@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=1728" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Paffle – The Future of Global Money</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="Asset/Favicon.png" />
@@ -28,7 +28,25 @@
       </span>
       Download App
     </a>
+
+    <button class="navbar-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <!-- Mobile menu overlay -->
+  <div class="mobile-menu">
+    <a class="mobile-menu-item" href="#">Products</a>
+    <a class="mobile-menu-item" href="#">Affiliate and Rewards</a>
+    <a class="mobile-menu-item" href="#">About</a>
+    <a class="mobile-menu-cta" href="#">
+      <span class="navbar-cta-icons">
+        <img class="navbar-cta-icon" src="Asset/famicons_logo-apple-appstore.svg" alt="App Store" />
+        <img class="navbar-cta-icon" src="Asset/ion_logo-google-playstore.svg" alt="Play Store" />
+      </span>
+      Download App
+    </a>
+  </div>
 
   <!-- ═══════════════════════════════════════════════════
      SECTION 1 · HERO
@@ -408,6 +426,22 @@
   </main>
 
   <script>
+    // Hamburger menu
+    const hamburger = document.querySelector('.navbar-hamburger');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    });
+    document.querySelectorAll('.mobile-menu-item, .mobile-menu-cta').forEach(item => {
+      item.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {

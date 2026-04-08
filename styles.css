@@ -810,3 +810,430 @@ body {
   color: rgba(0, 0, 0, 0.7);
   white-space: nowrap;
 }
+
+/* ─── HAMBURGER ─────────────────────────────────────── */
+.navbar-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+.navbar-hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ─── MOBILE MENU ───────────────────────────────────── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.97);
+  z-index: 999;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu-item {
+  font-size: 28px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  letter-spacing: -0.5px;
+  opacity: 0.85;
+}
+
+.mobile-menu-item:hover {
+  opacity: 1;
+}
+
+.mobile-menu-cta {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--brand);
+  border-radius: 100px;
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+/* ─── RESPONSIVE: 1200px ────────────────────────────── */
+@media (max-width: 1200px) {
+  .hero-title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .hero-subtitle {
+    font-size: 22px;
+    line-height: 32px;
+    width: auto;
+    max-width: 520px;
+  }
+
+  .section-title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .who-card {
+    height: 460px;
+  }
+
+  .who-card-label {
+    font-size: 36px;
+  }
+
+  .what-card-title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .card-title {
+    font-size: 42px;
+    line-height: 52px;
+  }
+
+  .cta-title {
+    font-size: 60px;
+    line-height: 70px;
+  }
+
+  .cta-globe-img {
+    width: 600px;
+    height: 600px;
+  }
+
+  .section-who,
+  .section-what,
+  .section-built {
+    padding: 80px 40px;
+  }
+}
+
+/* ─── RESPONSIVE: 768px ─────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    top: 16px;
+    padding: 0 20px;
+  }
+
+  .navbar.scrolled {
+    top: 12px;
+    width: 92%;
+    padding: 14px 20px;
+  }
+
+  .navbar-menus,
+  .navbar-cta {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero-heading {
+    padding: 40px 24px;
+    justify-content: flex-start;
+  }
+
+  .hero-heading-inner {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+    line-height: 26px;
+    width: auto;
+  }
+
+  /* Shared */
+  .section-who,
+  .section-what,
+  .section-built,
+  .section-faq {
+    padding: 64px 20px;
+    max-width: 100%;
+  }
+
+  .section-inner {
+    gap: 48px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    line-height: 40px;
+    white-space: normal;
+  }
+
+  /* Who */
+  .who-row {
+    flex-direction: column;
+  }
+
+  .who-card {
+    flex: none;
+    width: 100%;
+    height: 300px;
+  }
+
+  .who-card-label {
+    font-size: 28px;
+  }
+
+  .who-card-gradient {
+    padding: 24px;
+    height: 180px;
+  }
+
+  /* What */
+  .what-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .what-card-title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .what-card-desc {
+    font-size: 15px;
+  }
+
+  /* Built */
+  .built-inner {
+    gap: 32px;
+  }
+
+  .built-mockup img {
+    border-radius: 16px !important;
+  }
+
+  /* Card section */
+  .section-card {
+    height: auto;
+    max-height: none;
+  }
+
+  .card-content {
+    padding-top: 48px;
+    gap: 32px;
+  }
+
+  .card-title {
+    font-size: 28px;
+    line-height: 36px;
+    white-space: normal;
+    padding: 0 20px;
+  }
+
+  .credit-card {
+    width: 260px;
+  }
+
+  .card-features {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 20px;
+    max-width: 400px;
+  }
+
+  .card-bg-image {
+    height: 40%;
+  }
+
+  /* FAQ */
+  .faq-list {
+    width: 100%;
+  }
+
+  .faq-item-question {
+    font-size: 16px;
+    white-space: normal;
+  }
+
+  .faq-item-answer p {
+    font-size: 14px;
+  }
+
+  /* CTA */
+  .section-cta {
+    padding: 64px 20px 0;
+  }
+
+  .cta-title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -1px;
+  }
+
+  .cta-subtitle {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .cta-globe-img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 64px 20px 32px;
+  }
+
+  .footer-tagline {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .footer-copyright {
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* ─── RESPONSIVE: 480px ─────────────────────────────── */
+@media (max-width: 480px) {
+  .navbar-logo {
+    width: 80px;
+    height: auto;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .who-row,
+  .who-grid {
+    gap: 12px;
+  }
+
+  .who-card {
+    flex: none;
+    width: 100%;
+    height: 340px;
+    border-radius: 20px;
+  }
+
+  .what-card-title {
+    font-size: 20px;
+  }
+
+  .built-tabs {
+    gap: 6px;
+    padding: 4px;
+  }
+
+  .built-tab {
+    font-size: 12px;
+    padding: 12px 24px;
+  }
+
+  .built-mockup img {
+    border-radius: 8px !important;
+  }
+
+  .section-card {
+    padding: 20px 20px 300px 20px;
+  }
+
+  .card-cta-btn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+
+  .card-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .credit-card {
+    width: 80%;
+    border-radius: 16px;
+  }
+
+  .cta-text-block {
+    gap: 20px;
+  }
+
+  .cta-inner {
+    gap: 48px;
+  }
+
+  .cta-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .faq-item-question {
+    font-size: 15px;
+  }
+
+  .cta-globe-img {
+    width: 100%;
+    height: 350px;
+  }
+}
