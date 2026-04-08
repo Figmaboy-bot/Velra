@@ -551,12 +551,22 @@ body {
   cursor: pointer;
   white-space: nowrap;
   text-decoration: none;
+  transition: gap 0.3s ease, background 0.3s ease;
+}
+
+.card-cta-btn:hover {
+  background: #000;
+}
+
+.card-cta-btn:hover .card-cta-arrow {
+  transform: translateX(16px);
 }
 
 .card-cta-arrow {
   width: 19px;
   height: 8px;
   object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 /* ─── FAQ ───────────────────────────────────────────── */

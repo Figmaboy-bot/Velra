@@ -176,13 +176,13 @@
 
       <!-- Tab toggle -->
       <div class="built-tabs">
-        <button class="built-tab active">Individual</button>
-        <button class="built-tab inactive">Business</button>
+        <button class="built-tab active" data-tab="individual">Individual</button>
+        <button class="built-tab inactive" data-tab="business">Business</button>
       </div>
 
       <!-- App mockup browser window -->
       <div class="built-mockup">
-        <img src="Asset/Dashboard.svg" alt=""
+        <img id="dashboard-img" src="Asset/Dashboard.svg" alt=""
           style="width: 100%; height: auto; display: block; border: 1px solid rgba(0,0,0,0.1); border-radius: 28px;">
       </div>
     </div>
@@ -416,6 +416,24 @@
       } else {
         navbar.classList.remove('scrolled');
       }
+    });
+
+    // Dashboard tabs
+    const dashboardImg = document.getElementById('dashboard-img');
+    const tabSrcs = {
+      individual: 'Asset/Dashboard.svg',
+      business: 'Asset/Business Dashboard.png'
+    };
+    document.querySelectorAll('.built-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.built-tab').forEach(t => {
+          t.classList.remove('active');
+          t.classList.add('inactive');
+        });
+        tab.classList.remove('inactive');
+        tab.classList.add('active');
+        dashboardImg.src = tabSrcs[tab.dataset.tab];
+      });
     });
 
     // FAQ accordion
